@@ -1,0 +1,64 @@
+{
+  "name": "alyz_dataset_table_counts_comb_all_attr",
+  "description": "表データの属性の組み合わせで属性値のカウントや出現割合を算出する\nこのサマリ情報を元に、表データの出現頻度の分布傾向を推察することができる",
+  "source_repository": "https://github.com/aistairc/Qunomon_AIT_alyz_dataset_table_counts_comb_all_attr",
+  "version": "0.2",
+  "quality": "https://ait-hub.pj.aist.go.jp/ait-hub/api/0.0.1/qualityDimensions/AIQM_Guideline/Distribution_of_training_data",
+  "keywords": [
+    "BDD100K",
+    "recode count"
+  ],
+  "references": [],
+  "licenses": [
+    "Apache License Version 2.0"
+  ],
+  "inventories": [
+    {
+      "name": "Data",
+      "type": "dataset",
+      "description": "表データ(csv)\n1列目は属性名、全属性がカテゴリ属性",
+      "requirement": {
+        "format": [
+          "csv"
+        ]
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "name": "attribute_no",
+      "type": "int",
+      "description": "表データの分析対象属性数\n左から何列分を分析対象とするか",
+      "default_val": "6",
+      "min": "2"
+    },
+    {
+      "name": "dimension",
+      "type": "int",
+      "description": "分析する属性の組み合わせ数\n※3を指定した場合、3つの属性の組み合わせを生成し、それぞれ分析する",
+      "default_val": "2",
+      "min": "2"
+    }
+  ],
+  "report": {
+    "measures": [],
+    "resources": [
+      {
+        "name": "distibution_csv",
+        "type": "table",
+        "description": "組み合わせごとの分布表"
+      },
+      {
+        "name": "distibution_plot",
+        "type": "picture",
+        "description": "各組み合わせの分布図"
+      }
+    ]
+  },
+  "downloads": [
+    {
+      "name": "Log",
+      "description": "AIT実行ログ"
+    }
+  ]
+}
