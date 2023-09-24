@@ -20,8 +20,12 @@ RUN update-alternatives --install /usr/local/bin/python python /usr/local/bin/py
 # RUN pip install --upgrade pip
 RUN pip3 install --upgrade pip setuptools \
     && pip3 install jupyterlab==2.2.9 \
-    && pip3 install matplotlib \
-    && pip3 install jupyter-console \
+    && pip3 install matplotlib==3.7.3 \
+    && pip3 install jupyter-console==6.6.1 \
+    && pip3 install jupyter_server==1.23.0 \
+    && pip3 install jupyter-client==7.4.9 \
+    && pip3 install nbformat==5.2.0 \
+    && pip3 install pyzmq==24.0.1 \
     && jupyter serverextension enable --py jupyterlab
 #    && jupyter labextension install mlflow-extension \
 #    && jupyter labextension install @lckr/jupyterlab_variableinspector

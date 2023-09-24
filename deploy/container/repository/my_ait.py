@@ -53,7 +53,7 @@ if not is_ait_launch:
 
     # install ait-sdk
     get_ipython().system('pip install --upgrade pip')
-    get_ipython().system('pip install --force-reinstall ./$ait_sdk_name')
+    get_ipython().system('pip install -q --no-deps --force-reinstall ./$ait_sdk_name')
 
 
 # In[3]:
