@@ -5,6 +5,8 @@ set YML="%~dp0\docker\docker-compose.yml"
 echo Launching docker containers.
 echo;
 
+copy ..\deploy\container\resolve-dependencies.sh docker\jupyter\
+
 docker-compose -f %YML% up -d
 
 echo;

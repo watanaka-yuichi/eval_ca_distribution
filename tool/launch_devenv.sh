@@ -5,6 +5,7 @@ YML="$(dirname "$0")/docker/docker-compose.yml"
 echo "Launching docker containers."
 echo $YML
 
+cp ../deploy/container/resolve-dependencies.sh docker/jupyter/resolve-dependencies.sh
 docker compose -f $YML build
 docker compose -f $YML up -d
 

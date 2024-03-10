@@ -25,6 +25,11 @@ ENV LC_MESSAGES ja_JP.UTF-8
 RUN apt-get update -yqq \
     && apt-get install gcc g++ make libffi-dev libssl-dev -yqq
 
+# コンテナ依存関係を解決
+COPY ./resolve-dependencies.sh /resolve-dependencies.sh
+RUN chmod +x /resolve-dependencies.sh
+RUN /resolve-dependencies.sh
+
 COPY ./repository/ ${QAI_USER_HOME}/
 
 WORKDIR ${QAI_USER_HOME}

@@ -66,8 +66,8 @@ if not is_ait_launch:
 if not is_ait_launch:
     from ait_sdk.common.files.ait_requirements_generator import AITRequirementsGenerator
     requirements_generator = AITRequirementsGenerator()
-    requirements_generator.add_package('pandas')
-    requirements_generator.add_package('seaborn')
+    requirements_generator.add_package('pandas','2.0.3')
+    requirements_generator.add_package('seaborn','0.13.0')
     requirements_generator.add_package(f'./{ait_sdk_name}')
     requirements_path = requirements_generator.create_requirements(current_dir)
 
@@ -115,11 +115,11 @@ if not is_ait_launch:
     manifest_genenerator.set_ait_name('alyz_dataset_table_counts_comb_all_attr')
     manifest_genenerator.set_ait_description('表データの属性の組み合わせで属性値のカウントや出現割合を算出する\nこのサマリ情報を元に、表データの出現頻度の分布傾向を推察することができる')
     manifest_genenerator.set_ait_source_repository('https://github.com/aistairc/Qunomon_AIT_alyz_dataset_table_counts_comb_all_attr')
-    manifest_genenerator.set_ait_version('0.2')
+    manifest_genenerator.set_ait_version('0.3')
     manifest_genenerator.add_ait_keywords('BDD100K')
     manifest_genenerator.add_ait_keywords('recode count')
     manifest_genenerator.add_ait_licenses('Apache License Version 2.0')
-    manifest_genenerator.set_ait_quality('https://ait-hub.pj.aist.go.jp/ait-hub/api/0.0.1/qualityDimensions/AIQM_Guideline/Distribution_of_training_data')
+    manifest_genenerator.set_ait_quality('https://ait-hub.pj.aist.go.jp/ait-hub/api/0.0.1/qualityDimensions/機械学習品質マネジメントガイドライン第三版/B-2データセットの均一性')
     inventory_requirement_Data = manifest_genenerator.format_ait_inventory_requirement(format_=['csv'])
     manifest_genenerator.add_ait_inventories(name='Data',
                                              type_='dataset',

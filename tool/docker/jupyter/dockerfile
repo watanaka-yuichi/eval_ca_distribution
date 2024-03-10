@@ -21,6 +21,11 @@ RUN pip3 install --upgrade pip setuptools \
 #    && jupyter labextension install mlflow-extension \
 #    && jupyter labextension install @lckr/jupyterlab_variableinspector
 
+# コンテナ依存関係を解決
+COPY ./resolve-dependencies.sh /resolve-dependencies.sh
+RUN chmod +x /resolve-dependencies.sh
+RUN /resolve-dependencies.sh
+
 # 作業ディレクトリを指定
 WORKDIR /workdir
 
